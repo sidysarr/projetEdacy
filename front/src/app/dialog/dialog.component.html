@@ -1,0 +1,18 @@
+<h1 mat-dialog-title> modifier flux</h1>
+<div mat-dialog-content>
+    <form [formGroup]="fluxForm ">
+      <mat-form-field appearance="outline">
+        <mat-label>Titre</mat-label>
+        <textarea formControlName="title"  matInput  placeholder = "title" > </ textarea >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Decription</mat-label>
+        <textarea formControlName="description"  matInput  placeholder = "description" > </ textarea >
+        
+      </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close=""> Fermer</button>
+<button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addFlux()"> {{actionBtn}}</button>
+</div>
