@@ -15,7 +15,7 @@ import { windowWhen } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'front';
-  displayedColumns: string[] = ['title', 'description','action'];
+  displayedColumns: string[] = ['title', 'description','media','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,7 +30,11 @@ export class AppComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
      width : '30%'
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val==='enregistrer'){
+        this.getAllFlux();
+      }
+    })
   }
 
   getAllFlux(){
@@ -51,6 +55,10 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent,{
     width:'30%',
     data:row
+    }).afterClosed().subscribe(val=>{
+      if(val==='modifier'){
+        this.getAllFlux();
+      }
     })
 
   }

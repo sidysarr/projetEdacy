@@ -26,8 +26,16 @@ export class DialogComponent implements OnInit {
     });
     if(this.editData){
       this.actionBtn = "Modifier";
+      
       this.fluxForm.controls['title'].setValue(this.editData.title);
       this.fluxForm.controls['description'].setValue(this.editData.description);
+
+      /*
+      console.log(this.editData);
+      this.fluxForm.controls['pubDate'].setValue(this.editData.pubDate);
+      this.fluxForm.controls['guid'].setValue(this.editData.guid);
+      this.fluxForm.controls['link'].setValue(this.editData.link);
+      this.fluxForm.controls['media'].setValue(this.editData.media);*/
     }
   }
   addFlux(){
@@ -46,9 +54,9 @@ export class DialogComponent implements OnInit {
           }
           
         })
-      }else{
-        this.udateFlux();
       }
+    }else{
+      this.udateFlux();
     }
   }
   udateFlux(){
@@ -61,7 +69,7 @@ export class DialogComponent implements OnInit {
         
       },
       error:()=>{
-        alert('Erreur')
+        alert('Erreur');
       }
       
     })
