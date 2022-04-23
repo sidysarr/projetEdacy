@@ -21,21 +21,22 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
     this.fluxForm = this.formBuilder.group({
       title : ['',Validators.required],   
-      description : ['',Validators.required]
+      description : ['',Validators.required],
+      media : ['',Validators.required]
 
     });
     if(this.editData){
       this.actionBtn = "Modifier";
       
       this.fluxForm.controls['title'].setValue(this.editData.title);
-      this.fluxForm.controls['description'].setValue(this.editData.description);
+      this.fluxForm.controls['description'].setValue(this.editData.description);   
+      this.fluxForm.controls['media'].setValue(this.editData.media);
 
       /*
       console.log(this.editData);
       this.fluxForm.controls['pubDate'].setValue(this.editData.pubDate);
       this.fluxForm.controls['guid'].setValue(this.editData.guid);
-      this.fluxForm.controls['link'].setValue(this.editData.link);
-      this.fluxForm.controls['media'].setValue(this.editData.media);*/
+      this.fluxForm.controls['link'].setValue(this.editData.link);*/
     }
   }
   addFlux(){
