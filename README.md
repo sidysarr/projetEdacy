@@ -9,9 +9,9 @@ $ json-server --watch flux.json
 
 et le fichier son  sera disponible sous l'url http://localhost:3000/
  
-en suite on demare l'aaplication angular 
+en suite on demare l'aaplication angular sous un autre invite de ligne de commande
 
-$ ng serve open 
+$ ng serve --open 
 
 et j'ai ajouter capture dans le dossier pour montrer les vues
 j'ai pas reussit a deployer l'appication sous heroku mais j'ai ajouter les captures pour:
